@@ -68,8 +68,8 @@ namespace StaticClassExample
 
             Console.WriteLine("\nВідсортований масив: {0}", string.Join(", ", sortedArray));
 
-            // Пошук елемента 55 у відсортованому масиві
-            int targetElement = 55;
+            // Пошук елемента 80 у відсортованому масиві
+            int targetElement = 80;
             int index = ArrayOperations.BinarySearch(sortedArray, targetElement);
 
             if (index != -1)
