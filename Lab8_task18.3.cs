@@ -4,7 +4,7 @@ namespace ArithmeticCalculator
 {
     class Program
     {
-        // Універсальний делегат
+        // Універсальний делегат, який приймає два параметри типу T і повертає значення того ж типу
         delegate T ArithmeticOperation<T>(T a, T b);
 
         static void Main(string[] args)
@@ -28,6 +28,7 @@ namespace ArithmeticCalculator
             }
         }
 
+        // Універсальний метод для виконання вибраної операції
         static void PerformOperation<T>(string operation, T num1, T num2) where T : struct
         {
             ArithmeticOperation<T> arithmetic = null;
@@ -58,21 +59,25 @@ namespace ArithmeticCalculator
             }
         }
 
+        // Метод для додавання
         static T Add<T>(T a, T b) where T : struct
         {
             return (dynamic)a + (dynamic)b;
         }
 
+        // Метод для віднімання
         static T Subtract<T>(T a, T b) where T : struct
         {
             return (dynamic)a - (dynamic)b;
         }
 
+        // Метод для множення
         static T Multiply<T>(T a, T b) where T : struct
         {
             return (dynamic)a * (dynamic)b;
         }
 
+        // Метод для ділення
         static T Divide<T>(T a, T b) where T : struct
         {
             if ((dynamic)b == 0)
